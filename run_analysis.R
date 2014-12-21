@@ -21,8 +21,7 @@ run_analysis<-function(){
   
   ActivityList<-read.table("./UCI HAR Dataset/activity_labels.txt")
   Y_scale<-mapvalues(as.factor(Y_fulldata[,1]),from = as.character(ActivityList[,1]), to = as.character(ActivityList[,2]))
-  print(Y_scale)
-  
+    
   X_mean_std<-cbind(subject_fulldata,X_mean_std)
   colnames(X_mean_std)[1]<-"subject"
   
